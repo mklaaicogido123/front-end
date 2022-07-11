@@ -1,0 +1,18 @@
+.sidebar_friendList{
+    height: calc(100vh - 50px);
+  overflow-y: scroll;
+    margin:20px 20px;
+    border-right: 1px solid;
+}
+.friend{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 20px;
+}
+.friend_avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    margin: 0px 20px;  
+}

@@ -1,0 +1,23 @@
+.share{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    margin: 20px 0;
+    border-radius: 2%;
+    padding: 10px 10px;
+    background-color: white;
+}
+.share_avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+}
+.share_description{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
