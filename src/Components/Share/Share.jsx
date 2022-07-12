@@ -8,7 +8,6 @@ const Share = ({ handleGetPosts }) => {
   const user = useSelector((state) => state.auth.login.currentUser);
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  // const [url, setUrl] = useState("");
   const handleSharePost = (url) => {
     try {
       console.log("url:" + url);
@@ -70,7 +69,9 @@ const Share = ({ handleGetPosts }) => {
           <input
             type="file"
             accept="image/png, image/gif, image/jpeg"
-            onChange={(e) => setImage(e.target.files[0])}
+            onChange={(e) => {
+              setImage(e.target.files[0]);
+            }}
           />
         </div>
         <button type="submit" style={{ background: "green" }}>

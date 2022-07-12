@@ -1,22 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPostUser, getAllPost } from "../../redux/apiRequest";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./post.css";
 import Share from "../Share/Share";
 import axios from "axios";
+import { FcDeleteDatabase } from "react-icons/fc";
 
 const Post = ({ username }) => {
-  const [post, SetPost] = useState([]);
   const postList = useSelector((state) => state.post?.posts.allPost);
   const dispatch = useDispatch();
+
   const handleGetPosts = () => {
     username ? getPostUser(username, dispatch) : getAllPost(dispatch);
-    // SetPost(
-    //   postList.sort((p1, p2) => {
-    //     return new Date(p2.createAt) - new Date(p1.createAt);
-    //   })
-    // );
   };
 
   const handleDeletePost = async (id) => {
@@ -31,6 +27,7 @@ const Post = ({ username }) => {
   };
   useEffect(() => {
     handleGetPosts();
+    // eslint-disable-next-line
   }, [username]);
 
   return (
@@ -49,7 +46,15 @@ const Post = ({ username }) => {
                   style={{ margin: "0px" }}
                 />
                 <p style={{ margin: "0px 10px" }}>{post.userId.name}</p>
-                <button onClick={() => handleDeletePost(post._id)}></button>
+                <button
+                  style={{
+                    background: "#ffff",
+                    margin: "0px 10px",
+                  }}
+                  onClick={() => handleDeletePost(post._id)}
+                >
+                  <FcDeleteDatabase size={20} />
+                </button>
               </div>
               <div className="post_description">{post.description}</div>
               <div className="postImage">

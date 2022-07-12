@@ -13,6 +13,7 @@ const SideBar = () => {
       getAllUser(dispatch);
     };
     handleGetAllUsers();
+    // eslint-disable-next-line
   }, []);
   return (
     <div className="sidebar">

@@ -27,6 +27,7 @@ const NavBar = () => {
   };
   useEffect(() => {
     handleGetAllUser();
+    // eslint-disable-next-line
   }, []);
   return (
     <nav className="navbar-container">
@@ -62,6 +63,7 @@ const NavBar = () => {
                         to={"/profile/" + user.name}
                         className="navbar-text"
                         style={{ textDecoration: "none", color: "black" }}
+                        onClick={() => setSearch("")}
                       >
                         {user.name}
                       </Link>
