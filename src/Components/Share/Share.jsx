@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
+import { Button } from "@chakra-ui/react";
 
 const Share = ({ handleGetPosts }) => {
   const user = useSelector((state) => state.auth.login.currentUser);
@@ -10,7 +11,6 @@ const Share = ({ handleGetPosts }) => {
   const [image, setImage] = useState("");
   const handleSharePost = (url) => {
     try {
-      console.log("url:" + url);
       axios.post("/post", {
         userId: user._id,
         description: description,
@@ -74,9 +74,9 @@ const Share = ({ handleGetPosts }) => {
             }}
           />
         </div>
-        <button type="submit" style={{ background: "green" }}>
+        <Button type="submit" colorScheme="green">
           Share
-        </button>
+        </Button>
       </form>
       {/* <div>
         <input

@@ -7,6 +7,7 @@ import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 import { getAllUser } from "../../redux/apiRequest";
 import { useEffect } from "react";
+import { Button } from "@chakra-ui/react";
 
 const NavBar = () => {
   const user = useSelector((state) => state.auth.login.currentUser);
@@ -46,7 +47,7 @@ const NavBar = () => {
                 placeholder="search"
                 onChange={(e) => setSearch(e.target.value)}
                 value={search}
-                style={{ margin: 0 }}
+                style={{ margin: 0, height: "100%" }}
               />
               <div
                 style={{ background: "white", width: "100%", color: "black" }}
@@ -89,9 +90,14 @@ const NavBar = () => {
             >
               Home
             </Link>
-            <button onClick={handleLogout} className="btn-logout">
+            <Link to="/message">Message</Link>
+            <Button
+              onClick={handleLogout}
+              className="btn-logout"
+              colorScheme="blue"
+            >
               Logout
-            </button>
+            </Button>
           </div>
         </>
       ) : (

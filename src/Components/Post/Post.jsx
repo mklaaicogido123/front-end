@@ -9,6 +9,7 @@ import { FcDeleteDatabase } from "react-icons/fc";
 
 const Post = ({ username }) => {
   const postList = useSelector((state) => state.post?.posts.allPost);
+  const user = useSelector((state) => state.auth.login.currentUser);
   const dispatch = useDispatch();
 
   const handleGetPosts = () => {
@@ -33,8 +34,12 @@ const Post = ({ username }) => {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <Share handleGetPosts={handleGetPosts} />
-        <h1>{username}</h1>
+        {user.name === username ? (
+          <Share handleGetPosts={handleGetPosts} />
+        ) : (
+          <></>
+        )}
+
         {postList?.map((post) => {
           return (
             <div className="post" key={post._id}>

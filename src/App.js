@@ -6,6 +6,7 @@ import Register from "./Components/Register/Register";
 import NavBar from "./Components/NavBar/NavBar";
 import RequireAuth from "./Components/Auth/RequireAuth";
 import Profile from "./pages/profile/Profile";
+import Message from "./pages/message/Message";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path=":username" element={<Profile />}></Route>
               <Route path="me" element={<Profile />} />
             </Route>
+            <Route path="/message" element={<Message />}></Route>
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
