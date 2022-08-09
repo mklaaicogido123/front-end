@@ -4,7 +4,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  height: 800px;
+  height: 700px;
   /* background-color: black; */
 }
 .listChat{
@@ -39,7 +39,7 @@
 }
 .your-message {
   background: #009bff;
-  margin: 1em;
+  margin: 8px;
   border-radius: 1em;
   padding: 1em;
   color: white;
@@ -49,9 +49,9 @@
 
 .other-people {
   background: #868686;
-  margin: 1em;
+  margin: 8px;
   border-radius: 1em;
-  padding: 1em;
+  padding: 10px;
   color: white;
   float: left;
   width: 40%;
